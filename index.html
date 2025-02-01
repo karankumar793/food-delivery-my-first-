@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodExpress - Food Delivery App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <i class="fas fa-utensils"></i>
+            <span>FoodExpress</span>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for restaurants or dishes...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-links">
+            <div class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <button class="login-btn">Login</button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1>Delicious Food Delivered To Your Door</h1>
+            <p>Order from your favorite restaurants with just a few clicks!</p>
+        </section>
+
+        <section class="categories">
+            <h2>Categories</h2>
+            <div class="category-list">
+                <div class="category-item" data-category="all">
+                    <i class="fas fa-utensils"></i>
+                    <span>All</span>
+                </div>
+                <div class="category-item" data-category="pizza">
+                    <i class="fas fa-pizza-slice"></i>
+                    <span>Pizza</span>
+                </div>
+                <div class="category-item" data-category="burger">
+                    <i class="fas fa-hamburger"></i>
+                    <span>Burgers</span>
+                </div>
+                <div class="category-item" data-category="sushi">
+                    <i class="fas fa-fish"></i>
+                    <span>Sushi</span>
+                </div>
+                <div class="category-item" data-category="dessert">
+                    <i class="fas fa-ice-cream"></i>
+                    <span>Desserts</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="restaurants">
+            <h2>Popular Restaurants</h2>
+            <div class="restaurant-grid" id="restaurantGrid">
+                <!-- Restaurants will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Delivery Address</label>
+                    <textarea id="address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <button type="submit" class="order-btn">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
